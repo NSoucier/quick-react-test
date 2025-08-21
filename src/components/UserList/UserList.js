@@ -1,7 +1,7 @@
 import './UserList.css';
 import User from '../User/User';
 import { useEffect, useState } from 'react';
-// import userData from '../../users.json';
+// import userData from '../../users.json'; // if json is in src folder
 
 function UserList () {
     const [ loading, setLoading ] = useState(true) // loading state
@@ -21,7 +21,7 @@ function UserList () {
             setLoading(true);
             try {
                 const response = await fetch('https://jsonplaceholder.typicode.com/users');
-                // const response = await fetch('/users.json');
+                // const response = await fetch('/users.json'); // if json is in public folder
                 if (!response.ok) {
                     throw new Error('HTTP error: ' + response.status);
                 }   
